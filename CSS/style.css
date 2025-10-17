@@ -1,0 +1,87 @@
+/* Custom styles for the Todo List app */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Custom scrollbar for task list */
+#task-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+#task-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+#task-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+#task-list::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 10px;
+}
+
+#task-list::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Animation for new tasks */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#task-list li {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Custom alert animations */
+@keyframes slideInRight {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
+
+.custom-alert {
+    animation: slideInRight 0.3s ease-out;
+    min-width: 300px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .custom-alert {
+        min-width: auto;
+        left: 1rem;
+        right: 1rem;
+    }
+}
+
+/* Focus styles for better accessibility */
+input:focus, button:focus, select:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+/* Date input styling */
+input[type="date"] {
+    position: relative;
+}
+
+input[type="date"]:invalid {
+    border-color: #ef4444;
+}
+
+/* Overdue task styling */
+.border-red-300 {
+    border-color: #fca5a5;
+}
+
+.bg-red-50 {
+    background-color: #fef2f2;
+}
